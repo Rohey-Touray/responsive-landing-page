@@ -1,0 +1,234 @@
+<!--
+  Topic: Central Gym — community fitness center landing page
+
+  Where CSS Grid is used:
+  - Page shell: .page uses display:grid + grid-template-areas (header / main / footer)
+  - Showcase: two equal columns for training imagery (grid-template-columns: 1fr 1fr)
+  - Classes: responsive card grid (repeat + minmax + auto-fit)
+  - Team + Footer: multi-column grids
+
+  Where Flexbox is used:
+  - Navigation: logo + link row + spacing (display:flex)
+  - Hero: vertical stack + left alignment (flex column, align-items: flex-start)
+  - Class card headers: number + title row (display:flex)
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Central Gym — Strength, cardio &amp; community</title>
+    <meta
+      name="description"
+      content="Central Gym is your neighborhood training floor: coached classes, open gym access, and a supportive community focused on real progress."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="page">
+      <header class="site-header" id="top">
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="#top"><span class="brand__accent">Central</span> Gym</a>
+
+          <ul class="nav__links">
+            <li><a class="nav__link" href="#about">About</a></li>
+            <li><a class="nav__link" href="#classes">Classes</a></li>
+            <li><a class="nav__link" href="#team">Trainers</a></li>
+            <li><a class="nav__link" href="#features">Amenities</a></li>
+            <li><a class="nav__link" href="#footer">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="main" class="site-main">
+        <section class="hero" aria-labelledby="hero-title">
+          <h1 id="hero-title" class="hero__title">
+            Train smarter.<br />
+            <span class="hero__title-accent">Get stronger</span> together.
+          </h1>
+          <p class="hero__lead">
+            Welcome to Central Gym — where coaching meets community. Whether you are building a
+            baseline, chasing a PR, or staying consistent, we meet you with programs that fit real
+            life.
+          </p>
+          <a class="button button--cta" href="#footer">Join today</a>
+        </section>
+
+        <section class="showcase" aria-label="Training floor and strength training">
+          <figure class="showcase__item">
+            <img
+              class="showcase__img"
+              src="https://images.unsplash.com/photo-1534438327276-14e530786512?auto=format&fit=crop&w=1200&q=80"
+              width="1200"
+              height="900"
+              alt="Spacious gym floor with racks and training equipment"
+            />
+          </figure>
+          <figure class="showcase__item">
+            <img
+              class="showcase__img"
+              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80"
+              width="1200"
+              height="900"
+              alt="Athlete lifting kettlebells during a strength session"
+            />
+          </figure>
+        </section>
+
+        <section class="section" id="about" aria-labelledby="about-title">
+          <div class="section__inner section__inner--split">
+            <div>
+              <h2 id="about-title" class="section__title">Built for everyday athletes</h2>
+              <p class="section__text">
+                Central Gym is a full-service training floor designed for clarity: open gym hours,
+                coached classes, and trainers who care about form, safety, and sustainable progress.
+              </p>
+              <p class="section__text">
+                No gimmicks — just structured training, approachable coaching, and a community that
+                shows up for each other.
+              </p>
+            </div>
+            <div class="panel">
+              <h3 class="panel__title">Why members stay</h3>
+              <ul class="list">
+                <li>Flexible memberships and class packs</li>
+                <li>Equipment maintained for heavy training</li>
+                <li>Programming you can repeat week to week</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--rule" id="classes" aria-labelledby="classes-title">
+          <div class="section__inner">
+            <div class="section__header">
+              <h2 id="classes-title" class="section__title">Classes &amp; training</h2>
+              <p class="section__text">
+                Pick a lane — strength, conditioning, or recovery — and build a routine that sticks.
+              </p>
+            </div>
+
+            <div class="products">
+              <article class="product">
+                <header class="product__head">
+                  <span class="product__tag" aria-hidden="true">01</span>
+                  <h3 class="product__title">Strength Lab</h3>
+                </header>
+                <p class="product__text">
+                  Barbell and dumbbell progressions with coach-led warm-ups and technical cues.
+                </p>
+              </article>
+
+              <article class="product">
+                <header class="product__head">
+                  <span class="product__tag" aria-hidden="true">02</span>
+                  <h3 class="product__title">MetCon Circuit</h3>
+                </header>
+                <p class="product__text">
+                  High-energy intervals that build engine fitness while keeping movement quality high.
+                </p>
+              </article>
+
+              <article class="product">
+                <header class="product__head">
+                  <span class="product__tag" aria-hidden="true">03</span>
+                  <h3 class="product__title">Mobility &amp; Reset</h3>
+                </header>
+                <p class="product__text">
+                  Guided mobility flows to open tight areas, improve range of motion, and support recovery.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="team" aria-labelledby="team-title">
+          <div class="section__inner">
+            <div class="section__header">
+              <h2 id="team-title" class="section__title">Trainers</h2>
+              <p class="section__text">Coaches who teach, correct, and cheer you on.</p>
+            </div>
+
+            <div class="team">
+              <article class="person">
+                <h3 class="person__name">Jordan Ellis</h3>
+                <p class="person__role">Head Coach — Strength</p>
+                <p class="person__text">Specializes in compound lifts, beginner onboarding, and confident barbell mechanics.</p>
+              </article>
+              <article class="person">
+                <h3 class="person__name">Riley Chen</h3>
+                <p class="person__role">Conditioning Lead</p>
+                <p class="person__text">Builds smart interval work that challenges you without burning you out.</p>
+              </article>
+              <article class="person">
+                <h3 class="person__name">Sam Okoro</h3>
+                <p class="person__role">Mobility &amp; Recovery</p>
+                <p class="person__text">Helps you move better between sessions with practical mobility habits.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--rule" id="features" aria-labelledby="features-title">
+          <div class="section__inner">
+            <div class="section__header">
+              <h2 id="features-title" class="section__title">Amenities</h2>
+              <p class="section__text">Everything you need before, during, and after training.</p>
+            </div>
+
+            <div class="features">
+              <div class="feature">
+                <h3 class="feature__title">Locker rooms &amp; showers</h3>
+                <p class="feature__text">Clean, spacious changing areas so you can train on your schedule.</p>
+              </div>
+              <div class="feature">
+                <h3 class="feature__title">Free parking</h3>
+                <p class="feature__text">Dedicated member parking and bike racks on site.</p>
+              </div>
+              <div class="feature">
+                <h3 class="feature__title">Recovery zone</h3>
+                <p class="feature__text">Foam rollers, bands, and space to cool down after tough sessions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer" id="footer">
+        <div class="footer">
+          <div class="footer__brand">
+            <p class="footer__name"><span class="brand__accent">Central</span> Gym</p>
+            <p class="footer__text">Your neighborhood training floor — strength, conditioning, and community under one roof.</p>
+          </div>
+
+          <div class="footer__cols" aria-label="Footer">
+            <div class="footer__col">
+              <h3 class="footer__title">Visit</h3>
+              <p class="footer__muted">400 Central Avenue<br />Your City, ST 00000</p>
+            </div>
+            <div class="footer__col">
+              <h3 class="footer__title">Contact</h3>
+              <p class="footer__muted">
+                <a href="mailto:hello@centralgym.example">hello@centralgym.example</a><br />
+                <a href="tel:+15555550100">+1 (555) 555-0100</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="footer__bottom">
+            <p class="footer__muted">© <span id="year">2026</span> Central Gym. All rights reserved.</p>
+            <a class="footer__muted footer__top" href="#top">Back to top</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
